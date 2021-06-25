@@ -58,7 +58,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
         binding.tvDetReleaseDate.setText("Released on " + movie.getReleaseDate() + " |");
 
-        // YouTube stuff : get videoId of the first JSON object in the JSOn array
+        // get videoId of the first JSON object in the JSOn array if it exists
         String VIDEOS_URL = String.format("https://api.themoviedb.org/3/movie/%s/videos?api_key=%s&language=en-US",
                                          movie.getId().toString(), getString(R.string.movie_api_key));
         AsyncHttpClient client = new AsyncHttpClient();
@@ -86,6 +86,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         binding.ivPlayIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // if video Id exists, navigate user to trailer upon tapping; else, nothing happens. 
                 if (!videoId.equals("")) {
                     Intent intent = new Intent(MovieDetailsActivity.this, MovieTrailerActivity.class);
                     intent.putExtra("videoId", videoId);
