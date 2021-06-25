@@ -56,7 +56,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         } else {
             binding.tvDetAdult.setText("Not Rated Adult");
         }
-        binding.tvDetReleaseDate.setText("Released on " + movie.getReleaseDate());
+        binding.tvDetReleaseDate.setText("Released on " + movie.getReleaseDate() + " |");
 
         // YouTube stuff : get videoId of the first JSON object in the JSOn array
         String VIDEOS_URL = String.format("https://api.themoviedb.org/3/movie/%s/videos?api_key=%s&language=en-US",

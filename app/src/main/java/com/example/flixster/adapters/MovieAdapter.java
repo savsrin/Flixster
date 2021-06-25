@@ -41,7 +41,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     // inflate a layout from XML and return the view holder
     public ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         Log.d("MovieAdapter", "onCreateViewHolder");
-        ItemMovieBinding binding = ItemMovieBinding.inflate(LayoutInflater.from(context), parent, false);
+        ItemMovieBinding binding = ItemMovieBinding.inflate(LayoutInflater.from(context),
+                                                            parent, false);
         return new ViewHolder(binding);
     }
 
@@ -74,15 +75,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             itemMovieBinding.tvTitle.setText(movie.getTitle());
             itemMovieBinding.tvOverview.setText(movie.getOverview());
             String imageUrl;
-            if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            if (context.getResources().getConfiguration().orientation
+                    == Configuration.ORIENTATION_LANDSCAPE) {
                 imageUrl = movie.getBackdropPath();
             } else {
                 imageUrl = movie.getPosterPath();
             }
             int radius = 30;
             int margin = 0;
-            Glide.with(context).load(imageUrl).placeholder(R.drawable.flicks_movie_placeholder).centerCrop()
-            .transform(new RoundedCornersTransformation(radius, margin)).into(itemMovieBinding.ivPoster);
+            Glide.with(context)
+                    .load(imageUrl)
+                    .placeholder(R.drawable.flicks_movie_placeholder)
+                    .centerCrop()
+                    .transform(new RoundedCornersTransformation(radius, margin))
+                    .into(itemMovieBinding.ivPoster);
         }
 
         @Override

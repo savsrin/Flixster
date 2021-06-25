@@ -23,12 +23,8 @@ import java.util.List;
 import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
-   // public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=1a8b0696ad01700d859ef4cbf09f9df9&language=en-US&page=1";
-   // public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + getString(R.string.movie_api_key) + "&language=en-US&page=1";
-
     public static final String TAG = "MainActivity";
     List<Movie> movies;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key="
@@ -58,9 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit json exception");
                 }
-
             }
-
             @Override
             public void onFailure(int i, Headers headers, String s, Throwable throwable) {
                 Log.d(TAG, "onFailure");
