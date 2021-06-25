@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailsActivity">
+
+    <TextView
+        android:id="@+id/tvDetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Movie Title"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <RatingBar
+        android:id="@+id/rbVoteAverage"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:numStars="5"
+        android:stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/tvDetOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rbVoteAverage"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/ivDetPoster"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetReleaseDate"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="45dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvDetReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetOverview"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvDetAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetOverview"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/tvDetReleaseDate"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/ivPlayIcon"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignStart="@+id/ivDetPoster"
+        android:layout_alignTop="@+id/ivDetPoster"
+        android:layout_alignEnd="@+id/ivDetPoster"
+        android:layout_alignBottom="@+id/ivDetPoster"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="2dp"
+        app:srcCompat="@drawable/yt_icon_rgb" />
+
+</RelativeLayout>
