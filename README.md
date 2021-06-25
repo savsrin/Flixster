@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='walkthrough_improvedres.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap](https://getkap.co/).
+GIF created with [LICECap](https://www.cockos.com/licecap/).
 
 ## Notes
 Describe any challenges encountered while building the app.
